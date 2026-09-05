@@ -345,3 +345,728 @@
 </body>
 </html>
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raza Travels - Hotel Booking Login</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.55)
+                ),
+                url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* NAVBAR */
+
+        .navbar {
+            width: 100%;
+
+            padding: 20px 8%;
+
+            background: rgba(6, 40, 61, 0.95);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00d4ff;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+
+            margin-left: 25px;
+
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+
+        /* MAIN */
+
+        .main-container {
+
+            flex: 1;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+
+        /* LOGIN BOX */
+
+        .login-box {
+
+            width: 420px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            padding: 40px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+
+
+        /* LOGIN TITLE */
+
+        .login-header {
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+        .hotel-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: auto;
+            margin-bottom: 15px;
+
+            background: #0077b6;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 35px;
+        }
+
+        .login-header h1 {
+            color: #06283d;
+
+            font-size: 28px;
+
+            margin-bottom: 8px;
+        }
+
+        .login-header p {
+            color: #777;
+
+            font-size: 14px;
+        }
+
+
+        /* INPUT GROUP */
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: bold;
+
+            color: #06283d;
+        }
+
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box span {
+            position: absolute;
+
+            left: 14px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            font-size: 18px;
+        }
+
+        .input-box input {
+            width: 100%;
+
+            padding: 14px 15px 14px 45px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: #0077b6;
+
+            box-shadow:
+                0 0 5px rgba(0, 119, 182, 0.25);
+        }
+
+
+        /* PASSWORD */
+
+        .password-box {
+            position: relative;
+        }
+
+        .password-box input {
+            padding-right: 45px;
+        }
+
+        .show-password {
+            position: absolute;
+
+            right: 13px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+
+        /* OPTIONS */
+
+        .login-options {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+
+            font-size: 14px;
+        }
+
+        .remember {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #555;
+        }
+
+        .forgot {
+            color: #0077b6;
+
+            text-decoration: none;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+
+        /* LOGIN BUTTON */
+
+        .login-btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #0077b6;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #023e8a;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* DIVIDER */
+
+        .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 25px 0;
+
+            color: #999;
+
+            font-size: 13px;
+        }
+
+        .divider::before,
+        .divider::after {
+
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background: #ddd;
+        }
+
+
+        /* REGISTER */
+
+        .register {
+            text-align: center;
+
+            color: #666;
+
+            font-size: 14px;
+        }
+
+        .register a {
+
+            color: #0077b6;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+        .register a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* SUCCESS MESSAGE */
+
+        .success-message {
+
+            display: none;
+
+            background: #d8f3dc;
+
+            color: #1b4332;
+
+            padding: 12px;
+
+            border-radius: 7px;
+
+            margin-bottom: 20px;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            background: rgba(6, 27, 41, 0.95);
+
+            color: white;
+
+            text-align: center;
+
+            padding: 18px;
+        }
+
+        footer span {
+            color: #00d4ff;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                flex-direction: column;
+
+                gap: 12px;
+
+                text-align: center;
+            }
+
+            .nav-links a {
+                margin: 0 7px;
+            }
+
+            .login-box {
+                width: 100%;
+
+                max-width: 420px;
+
+                padding: 30px 22px;
+            }
+
+            .login-header h1 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>R</span> Raza Travels
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="booking.html">Booking</a>
+
+            <a href="#">Hotels</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main class="main-container">
+
+        <div class="login-box">
+
+
+            <!-- HEADER -->
+
+            <div class="login-header">
+
+                <div class="hotel-icon">
+                    🏨
+                </div>
+
+                <h1>Hotel Booking Login</h1>
+
+                <p>
+                    Login to manage your hotel bookings
+                </p>
+
+            </div>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                class="success-message"
+                id="successMessage"
+            >
+                ✓ Login successful! Welcome to Raza Travels.
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="loginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>📧</span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box password-box">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <span
+                            class="show-password"
+                            onclick="togglePassword()"
+                            id="eye"
+                        >
+                            👁️
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        class="forgot"
+                        onclick="forgotPassword()"
+                    >
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    🔐 Login
+                </button>
+
+            </form>
+
+
+            <!-- DIVIDER -->
+
+            <div class="divider">
+                OR
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div class="register">
+
+                Don't have an account?
+
+                <a
+                    href="#"
+                    onclick="registerUser()"
+                >
+                    Create Account
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Raza Travels</span>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        /* SHOW / HIDE PASSWORD */
+
+        function togglePassword() {
+
+            const password =
+                document.getElementById("password");
+
+            const eye =
+                document.getElementById("eye");
+
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                eye.innerHTML = "🙈";
+
+            } else {
+
+                password.type = "password";
+
+                eye.innerHTML = "👁️";
+            }
+
+        }
+
+
+        /* LOGIN */
+
+        document
+            .getElementById("loginForm")
+            .addEventListener(
+                "submit",
+                function(event) {
+
+                    event.preventDefault();
+
+
+                    const email =
+                        document.getElementById("email").value;
+
+                    const password =
+                        document.getElementById("password").value;
+
+
+                    if (email && password) {
+
+                        document
+                            .getElementById("successMessage")
+                            .style.display = "block";
+
+
+                        alert(
+                            "Login successful!\n\n" +
+                            "Welcome to Raza Travels."
+                        );
+
+                    }
+
+                }
+            );
+
+
+        /* FORGOT PASSWORD */
+
+        function forgotPassword() {
+
+            alert(
+                "Password Reset\n\n" +
+                "Please enter your registered email address " +
+                "to receive a password reset link."
+            );
+
+        }
+
+
+        /* REGISTER */
+
+        function registerUser() {
+
+            alert(
+                "Create Account\n\n" +
+                "Registration page will open here."
+            );
+
+        }
+
+    </script>
+
+
+</body>
+</html>
+
