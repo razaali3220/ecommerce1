@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raza Amusement Park</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8e7;
+            color: #222;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(90deg, #ff1744, #ff9100);
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffe600;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                linear-gradient(135deg, #673ab7, #e91e63, #ff9800);
+            padding: 40px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 65px;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 8px #000;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffe600;
+            color: #222;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        /* Sections */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            color: #e91e63;
+            margin-bottom: 40px;
+        }
+
+        /* Rides */
+        .rides {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .ride-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .ride-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .ride-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .ride-card h3 {
+            color: #ff5722;
+            margin-bottom: 10px;
+        }
+
+        /* About */
+        .about {
+            background: #fff0c2;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* Tickets */
+        .tickets {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .ticket {
+            background: white;
+            width: 280px;
+            padding: 35px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .ticket h3 {
+            color: #673ab7;
+            font-size: 25px;
+        }
+
+        .price {
+            font-size: 35px;
+            color: #e91e63;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        /* Contact */
+        .contact {
+            background: #292929;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #ffe600;
+        }
+
+        .contact p {
+            margin: 12px;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">🎡 RAZA AMUSEMENT</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rides">Rides</a></li>
+            <li><a href="#tickets">Tickets</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to Raza Amusement 🎢</h1>
+            <p>Where Fun, Adventure & Happiness Never Ends!</p>
+            <a href="#tickets" class="btn">🎟️ Book Tickets</a>
+        </div>
+    </section>
+
+    <!-- Rides Section -->
+    <section id="rides">
+        <h2 class="section-title">Our Amazing Rides</h2>
+
+        <div class="rides">
+
+            <div class="ride-card">
+                <div class="ride-icon">🎢</div>
+                <h3>Roller Coaster</h3>
+                <p>Experience thrilling twists, turns and high-speed adventure.</p>
+            </div>
+
+            <div class="ride-card">
+                <div class="ride-icon">🎡</div>
+                <h3>Giant Wheel</h3>
+                <p>Enjoy a beautiful view of the entire amusement park.</p>
+            </div>
+
+            <div class="ride-card">
+                <div class="ride-icon">🚗</div>
+                <h3>Bumper Cars</h3>
+                <p>Challenge your friends to an exciting bumper car battle.</p>
+            </div>
+
+            <div class="ride-card">
+                <div class="ride-icon">🎠</div>
+                <h3>Merry Go Round</h3>
+                <p>A colorful and fun ride perfect for families and children.</p>
+            </div>
+
+            <div class="ride-card">
+                <div class="ride-icon">💦</div>
+                <h3>Water Splash</h3>
+                <p>Cool down with our exciting water adventure.</p>
+            </div>
+
+            <div class="ride-card">
+                <div class="ride-icon">👻</div>
+                <h3>Haunted House</h3>
+                <p>Are you brave enough to enter our spooky haunted house?</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Raza Amusement</h2>
+
+        <p>
+            Raza Amusement is a fun-filled destination for families, friends
+            and adventure lovers. Enjoy exciting rides, delicious food,
+            entertainment and unforgettable moments all in one place.
+        </p>
+    </section>
+
+    <!-- Tickets -->
+    <section id="tickets">
+        <h2 class="section-title">Ticket Packages</h2>
+
+        <div class="tickets">
+
+            <div class="ticket">
+                <h3>Child Ticket</h3>
+                <div class="price">₹299</div>
+                <p>Access to selected rides</p>
+                <br>
+                <a href="#" class="btn" onclick="bookTicket('Child Ticket')">
+                    Book Now
+                </a>
+            </div>
+
+            <div class="ticket">
+                <h3>Adult Ticket</h3>
+                <div class="price">₹499</div>
+                <p>Access to all major rides</p>
+                <br>
+                <a href="#" class="btn" onclick="bookTicket('Adult Ticket')">
+                    Book Now
+                </a>
+            </div>
+
+            <div class="ticket">
+                <h3>Family Pass</h3>
+                <div class="price">₹1499</div>
+                <p>Perfect package for families</p>
+                <br>
+                <a href="#" class="btn" onclick="bookTicket('Family Pass')">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+
+        <p>📍 Raza Amusement Park</p>
+        <p>📞 +91 98765 43210</p>
+        <p>📧 info@razaamusement.com</p>
+        <p>🕐 Open Daily: 10:00 AM - 10:00 PM</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Raza Amusement. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function bookTicket(ticketType) {
+            alert("Thank you! You selected: " + ticketType);
+        }
+    </script>
+
+</body>
+</html>
